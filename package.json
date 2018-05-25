@@ -1,6 +1,6 @@
 {
   "name": "getting-started-with-graphql",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/kristianhalte/getting-started-with-graphql-js#readme",
   "dependencies": {
+    "express": "^4.16.3",
+    "express-graphql": "^0.6.12",
     "graphql": "^0.13.2"
   }
 }
