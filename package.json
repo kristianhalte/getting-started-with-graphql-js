@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/kristianhalte/getting-started-with-graphql-js/issues"
   },
-  "homepage": "https://github.com/kristianhalte/getting-started-with-graphql-js#readme"
+  "homepage": "https://github.com/kristianhalte/getting-started-with-graphql-js#readme",
+  "dependencies": {
+    "graphql": "^0.13.2"
+  }
 }
