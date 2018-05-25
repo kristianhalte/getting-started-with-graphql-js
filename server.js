@@ -9,18 +9,18 @@ var schema = buildSchema(`
 `);
 
 function loggingMiddleware(req, res, next) {
-  console.log('app:', req.app);
-  console.log('baseUrl:', req.baseUrl);
-  console.log('body:', req.body);
-  console.log('cookies:', req.cookies);
-  console.log('fresh:', req.fresh);
-  console.log('hostname:', req.hostname);
+  // console.log('app:', req.app);
+  // console.log('baseUrl:', req.baseUrl);
+  // console.log('body:', req.body);
+  // console.log('cookies:', req.cookies);
+  // console.log('fresh:', req.fresh);
+  // console.log('hostname:', req.hostname);
   console.log('ip:', req.ip);
-  console.log('ips:', req.ips);
-  console.log('method:', req.method);
-  console.log('originalUrl:', req.originalUrl);
-  console.log('params:', req.params);
-  console.log('headers:', req.headers);
+  // console.log('ips:', req.ips);
+  // console.log('method:', req.method);
+  // console.log('originalUrl:', req.originalUrl);
+  // console.log('params:', req.params);
+  // console.log('headers:', req.headers);
   next();
 }
 
