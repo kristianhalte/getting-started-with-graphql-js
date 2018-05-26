@@ -3,35 +3,35 @@ var graphqlHTTP = require('express-graphql');
 var { buildSchema } = require('graphql');
 
 var schema = buildSchema(`
+  type User {
+    id: String
+    name: String
+  }
+
   type Query {
-    ip: String
+    user(id: String): User
   }
 `);
 
-function loggingMiddleware(req, res, next) {
-  // console.log('app:', req.app);
-  // console.log('baseUrl:', req.baseUrl);
-  // console.log('body:', req.body);
-  // console.log('cookies:', req.cookies);
-  // console.log('fresh:', req.fresh);
-  // console.log('hostname:', req.hostname);
-  console.log('ip:', req.ip);
-  // console.log('ips:', req.ips);
-  // console.log('method:', req.method);
-  // console.log('originalUrl:', req.originalUrl);
-  // console.log('params:', req.params);
-  // console.log('headers:', req.headers);
-  next();
-}
+// Maps id to User object
+var fakeDatabase = {
+  'a': {
+    id: 'a',
+    name: 'alice',
+  },
+  'b': {
+    id: 'b',
+    name: 'bob',
+  },
+};
 
 var root = {
-  ip: function (args, request) {
-    return request.ip;
+  user: function ({id}) {
+    return fakeDatabase[id];
   }
 };
 
 var app = express();
-app.use(loggingMiddleware);
 app.use('/graphql', graphqlHTTP({
   schema: schema,
   rootValue: root,
